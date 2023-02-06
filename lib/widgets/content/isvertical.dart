@@ -65,7 +65,7 @@ class VerticalCard extends StatelessWidget {
                       IconButton(
                           onPressed: () {}, icon: const Icon(Icons.favorite)),
                       SizedBox(
-                        width: 120,
+                        width: 100,
                         child: ElevatedButton(
                             onPressed: () {}, child: const Text("Comprar")),
                       )
