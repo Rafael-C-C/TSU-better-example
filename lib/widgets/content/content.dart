@@ -41,6 +41,38 @@ class Content extends StatelessWidget {
                     if (isVerticalG(context)) const VerticalNavBar(),
                     if (isHorizontall(context)) const IsHorizontal(),
                     if (isVerticalG(context)) const IsVerticall(),
+                    if (isVerticalG(context))
+                      Column(
+                        children: [
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  color: Colors.green.shade100,
+                                ),
+                                const Spacer(),
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  color: Colors.green.shade100,
+                                ),
+                                const Spacer(),
+                                Container(
+                                  height: 50,
+                                  width: 50,
+                                  color: Colors.green.shade100,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
                   ],
                 ),
               )),

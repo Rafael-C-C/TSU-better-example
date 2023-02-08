@@ -7,76 +7,61 @@ class IsVerticall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        VerticalCard(),
-        VerticalCard(),
-        VerticalCard(),
-        VerticalCard(),
-      ],
-    );
-  }
-}
-
-class VerticalCard extends StatelessWidget {
-  const VerticalCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Container(
-        color: Colors.red.shade100,
-        height: 150,
-        width: 400,
-        child: Row(
-          children: [
-            Image.asset(
-              "assets/img/Foto.jpg",
-              height: 150,
-              width: 150,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    children: const [
-                      Text(
-                        "Titulo 1",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                      Text(
-                        "Description",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Text(
-                        "Precio: 500",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.favorite)),
-                      SizedBox(
-                        width: 100,
-                        child: ElevatedButton(
-                            onPressed: () {}, child: const Text("Comprar")),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    return Container(
+        color: Colors.blue.shade100,
+        height: 400,
+        width: 350,
+        child: ListView.builder(
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return Card(
+                color: Colors.red.shade100,
+                margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 200,
+                          child: Column(
+                            children: [
+                              const Text(
+                                "Soy un producto",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 25),
+                              ),
+                              const Text(
+                                "Soy una descripción Soy una descripción Soy una descripción Soy una descripción",
+                                style: TextStyle(fontSize: 15),
+                              ),
+                              Row(
+                                children: [
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: const Icon(Icons.favorite)),
+                                  ElevatedButton(
+                                      onPressed: () {},
+                                      child: const Text(
+                                        "Añadir al carrito",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      )),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Spacer(),
+                        Image.asset(
+                          "assets/img/Foto.jpg",
+                          height: 100,
+                          width: 100,
+                        )
+                      ],
+                    )),
+              );
+            }));
   }
 }
